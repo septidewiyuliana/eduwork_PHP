@@ -1,15 +1,15 @@
 Nomor 1 <br>
 <?php
-$bilangan = [1,2];
-foreach ($bilangan as $angka) {
-    if ($angka % 2 == 0) {
-        echo "$angka adalah bilangan genap<br>";
-    } else {
-        echo "$angka adalah bilangan ganjil<br>";
-    }
+$bilangan = 5;
+
+if ($bilangan % 2 == 0) {
+    echo "$bilangan adalah bilangan genap";
+} else {
+    echo "$bilangan adalah bilangan ganjil";
 }
-?>
+?> 
 <br> 
+<br>
 Nomor 2 <br>
 <?php
 $tahun = date("Y"); 
