@@ -1,6 +1,6 @@
 <?php
 include "data.php";
-$query = mysqli_query($conn, "SELECT * FROM buku");
+$query = mysqli_query($conn, "SELECT * FROM peminjaman");
 ?>
 
 <!DOCTYPE html>
@@ -52,11 +52,6 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
         }
         .center-buttons {
             text-align: center;
-        } 
-        .left-buttons {
-            text-align: left;
-            margin-left: 10% ;
-            padding: 20px 0;
         }
     </style>
 </head>
@@ -75,13 +70,9 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>ISBN</th>
-                    <th>Judul</th>
-                    <th>Tahun Terbit</th>
-                    <th>Harga Pinjam </th>
-                    <th>Stok </th>
-                    <th>Action</th>
-                </tr>
+                    <th>Tanggal Pinjam</th>
+                    <th>Tanggal Kembali</th>
+                 </tr>
             </thead>
             <tbody>
                 <?php
@@ -91,16 +82,9 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
                         ?>
                         <tr>
                             <td><?php echo $no ?></td>
-                            <td><?php echo $data["isbn"]; ?></td>
-                            <td><?php echo $data["judul"]; ?></td>
-                            <td><?php echo $data["tahun"]; ?></td>
-                            <td><?php echo $data["harga_pinjam"]; ?></td>
-                            <td><?php echo $data["qty_stok"]; ?></td>
-                            <td>
-                                <a href="#" class="btn btn-danger">Delete</a>
-                                <a href="#" class="btn btn-warning">Update</a>
-                            </td>
-                        </tr>
+                            <td><?php echo date ("d F Y",strtotime ($data["tgl_pinjam"])); ?></td>
+                            <td><?php echo date ("d F Y",strtotime($data["tgl_kembali"])); ?></td>
+                         </tr>
                         <?php $no++;
                     }
                 }
@@ -108,12 +92,10 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             </tbody>
         </table>
         <div class="left-buttons">
-            <a href= "tambahbuku.php">Tambah Buku</a> 
+            <a href= "tambahpeminjaman.php">Tambah Peminjaman</a> 
         </div>
-
     </div>
 
-    <!-- Tambahkan skrip jQuery dan JavaScript Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.min.js"></script>
 </body>

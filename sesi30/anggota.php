@@ -1,6 +1,6 @@
 <?php
 include "data.php";
-$query = mysqli_query($conn, "SELECT * FROM buku");
+$query = mysqli_query($conn, "SELECT * FROM anggota");
 ?>
 
 <!DOCTYPE html>
@@ -52,11 +52,6 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
         }
         .center-buttons {
             text-align: center;
-        } 
-        .left-buttons {
-            text-align: left;
-            margin-left: 10% ;
-            padding: 20px 0;
         }
     </style>
 </head>
@@ -75,11 +70,12 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>ISBN</th>
-                    <th>Judul</th>
-                    <th>Tahun Terbit</th>
-                    <th>Harga Pinjam </th>
-                    <th>Stok </th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Alamat</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -91,11 +87,12 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
                         ?>
                         <tr>
                             <td><?php echo $no ?></td>
-                            <td><?php echo $data["isbn"]; ?></td>
-                            <td><?php echo $data["judul"]; ?></td>
-                            <td><?php echo $data["tahun"]; ?></td>
-                            <td><?php echo $data["harga_pinjam"]; ?></td>
-                            <td><?php echo $data["qty_stok"]; ?></td>
+                            <td><?php echo $data["nama"]; ?></td>
+                            <td><?php echo $data["sex"]; ?></td>
+                            <td><?php echo $data["alamat"]; ?></td>
+                            <td><?php echo $data["username"]; ?></td>
+                            <td><?php echo $data["email"]; ?></td>
+                            <td><?php echo $data["role"]; ?></td>
                             <td>
                                 <a href="#" class="btn btn-danger">Delete</a>
                                 <a href="#" class="btn btn-warning">Update</a>
@@ -108,9 +105,8 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             </tbody>
         </table>
         <div class="left-buttons">
-            <a href= "tambahbuku.php">Tambah Buku</a> 
+            <a href= "tambahanggota.php">Tambah Anggota</a> 
         </div>
-
     </div>
 
     <!-- Tambahkan skrip jQuery dan JavaScript Bootstrap -->
