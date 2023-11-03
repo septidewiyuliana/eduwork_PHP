@@ -95,7 +95,7 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
                             <td><?php echo $data["role"]; ?></td>
                             <td>
                                 <a href="#" class="btn btn-danger">Delete</a>
-                                <a href="#" class="btn btn-warning">Update</a>
+                                <a href="#" class="btn btn-warning">Edit</a>
                             </td>
                         </tr>
                         <?php $no++;

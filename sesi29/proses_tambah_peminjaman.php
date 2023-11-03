@@ -1,6 +1,6 @@
 <?php
 $tgl_pinjam = $_POST['tgl_pinjam'];
-$tgl_kembali = $_POST['tgl-kembali'];
+$tgl_kembali = $_POST['tgl_kembali'];
 
 
 include_once "data.php";
