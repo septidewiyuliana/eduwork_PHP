@@ -85,25 +85,30 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             </thead>
             <tbody>
                 <?php
-                if (mysqli_num_rows($query) > 0) {
-                    $no = 1;
-                    while ($data = mysqli_fetch_array($query)) {
+                $data_buku  = mysqli_query($conn, "SELECT * FROM buku");
+                    $i = 1;
+                    while ($ambil_data = mysqli_fetch_array($data_buku)) {
+                        $isbn = $ambil_data["isbn"];
+                        $judul = $ambil_data["judul"];
+                        $tahun = $ambil_data["tahun"];
+                        $harga_pinjam = $ambil_data["harga_pinjam"];
+                        $stok = $ambil_data["qty_stok"];
+
                         ?>
                         <tr>
-                            <td><?php echo $no ?></td>
-                            <td><?php echo $data["isbn"]; ?></td>
-                            <td><?php echo $data["judul"]; ?></td>
-                            <td><?php echo $data["tahun"]; ?></td>
-                            <td><?php echo $data["harga_pinjam"]; ?></td>
-                            <td><?php echo $data["qty_stok"]; ?></td>
+                            <td><?= $i++; ?></td>
+                            <td><?= $isbn ?></td>
+                            <td><?= $judul ?></td>
+                            <td><?= $tahun ?></td>
+                            <td><?= $harga_pinjam ?></td>
+                            <td><?= $stok ?></td>
                             <td>
-                              <a class="btn btn-danger" href="delete.php?isbn=<?php echo $data['isbn']; ?>">Delete</a>
-                               <a class="btn btn-warning" href="edit.php?isbn=<?php echo $data['isbn']; ?>">Edit</a>
+                              <a class="btn btn-danger" href="delete.php?isbn=<?php echo $ambil_data['isbn']; ?>">Delete</a>
+                               <a class="btn btn-warning" href="edit.php?isbn=<?php echo $ambil_data['isbn']; ?>">Edit</a>
                             </td>
                         </tr>
-                        <?php $no++;
+                        <?php 
                     }
-                }
                 ?>
             </tbody>
         </table>

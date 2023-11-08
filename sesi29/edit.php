@@ -6,10 +6,10 @@
 </head>
 <body>
     <?php
-    include_once "data.php";
-    $books = $_GET['id'];
-
-    $books = mysqli_query($conn,"SELECT * FROM book WHERE id= $'id' ");
+    include "data.php";
+    $id = $_GET['id'];
+    $books = mysqli_query ($conn,"SELECT * from buku WHERE id = '$id'");
+    
     foreach($books as $book) {
         $judul = $buku_data['judul'];
         $tahun_terbit = $buku_data['tahun'];

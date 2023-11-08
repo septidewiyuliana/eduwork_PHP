@@ -63,7 +63,6 @@ $query = mysqli_query($conn, "SELECT * FROM peminjaman");
         <div class="center-buttons my-3">
             <a href= "index.php">Buku</a> |
             <a href= "anggota.php">Anggota</a> |
-            <a href= "pengarang.php">Pengarang</a> |
             <a href= "peminjaman.php">Peminjaman</a> |
         </div>
         <table class="table table-bordered table-striped">
