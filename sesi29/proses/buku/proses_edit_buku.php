@@ -1,5 +1,5 @@
 <?php
-include "data.php";
+include_once "data.php";
 if (isset($_POST['update'])) {
     if (!isset($_POST['isbn'])) {
         die("Error: ISBN tidak ditemukan.");

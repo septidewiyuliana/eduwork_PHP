@@ -7,53 +7,8 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
 <html>
 <head>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-        }
+      <link rel="stylesheet" type="text/css" href="css/style.css">
 
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #007BFF;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #80B4FF;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            margin-right: 5px;
-        }
-        .center-title {
-            background-color: #007BFF;
-            text-align: center;
-            padding: 20px 0;
-            text-decoration-color: aliceblue;
-        }
-        .white-text {
-            color: white;
-        }
-        .center-buttons {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div class="container my-5">
@@ -80,27 +35,34 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
             </thead>
             <tbody>
                 <?php
-                if (mysqli_num_rows($query) > 0) {
-                    $no = 1;
-                    while ($data = mysqli_fetch_array($query)) {
+                    $data_anggota = mysqli_query($conn, "SELECT * FROM anggota");
+                    $i = 1 ;
+                        while ($ambil_data_anggota = mysqli_fetch_array($data_anggota)) {
+                    
+                        $nama = $ambil_data_anggota["nama"];
+                        $sex = $ambil_data_anggota["sex"];
+                        $alamat = $ambil_data_anggota["alamat"];
+                        $username = $ambil_data_anggota["username"];
+                        $email = $ambil_data_anggota["email"];
+                        $role = $ambil_data_anggota["role"];
+
                         ?>
                         <tr>
-                            <td><?php echo $no ?></td>
-                            <td><?php echo $data["nama"]; ?></td>
-                            <td><?php echo $data["sex"]; ?></td>
-                            <td><?php echo $data["alamat"]; ?></td>
-                            <td><?php echo $data["username"]; ?></td>
-                            <td><?php echo $data["email"]; ?></td>
-                            <td><?php echo $data["role"]; ?></td>
+                            <td><?= $i++; ?></td>
+                            <td><?= $nama ?></td>
+                            <td><?= $sex ?></td>
+                            <td><?= $alamat ?></td>
+                            <td><?= $username ?></td>
+                            <td><?= $email ?></td>
+                            <td><?= $role ?></td>
                             <td>
-                                <a href="#" class="btn btn-danger">Delete</a>
-                                <a href="#" class="btn btn-warning">Edit</a>
-                            </td>
+                            <a class="btn btn-danger"  href="deleteanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>" onclick="return confirm ('Hapus data ini?')">Delete</a>
+                            <a class="btn btn-warning" href="editanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>">Edit</a>
+                            
                         </tr>
-                        <?php $no++;
+                        <?php 
                     }
-                }
-                ?>
+                         ?>
             </tbody>
         </table>
         <div class="left-buttons">
