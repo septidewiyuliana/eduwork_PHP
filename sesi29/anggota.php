@@ -57,7 +57,7 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
                             <td><?= $role ?></td>
                             <td>
                             <a class="btn btn-danger"  href="deleteanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>" onclick="return confirm ('Hapus data ini?')">Delete</a>
-                            <a class="btn btn-warning" href="editanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>">Edit</a>
+                            <a class="btn btn-warning" href="anggota/editanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>">Edit</a>
                             
                         </tr>
                         <?php 
@@ -66,7 +66,7 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
             </tbody>
         </table>
         <div class="left-buttons">
-            <a href= "tambahanggota.php">Tambah Anggota</a> 
+            <a href= "anggota/tambahanggota.php">Tambah Anggota</a> 
         </div>
     </div>
 

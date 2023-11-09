@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-include "data.php";
+include "../data.php";
 $id = $_GET['isbn'];
 $books = mysqli_query($conn, "SELECT * from buku WHERE isbn = '$id'");
 foreach ($books as $book) {

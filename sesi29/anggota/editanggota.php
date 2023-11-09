@@ -8,7 +8,7 @@
 
 <body>
     <?php
-    include "data.php";
+    include "../../data.php";
     $id_anggota = $_GET['id_anggota'];
     $members = mysqli_query($conn, "SELECT * from anggota WHERE id_anggota = '$id_anggota'");
 

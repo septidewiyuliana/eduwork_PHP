@@ -91,7 +91,7 @@ $query = mysqli_query($conn, "SELECT * FROM peminjaman");
             </tbody>
         </table>
         <div class="left-buttons">
-            <a href= "tambahpeminjaman.php">Tambah Peminjaman</a> 
+            <a href= "peminjaman/tambahpeminjaman.php">Tambah Peminjaman</a> 
         </div>
     </div>
 
