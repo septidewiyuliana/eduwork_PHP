@@ -6,9 +6,12 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
 <!DOCTYPE html>
 <html>
 <head>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+ 
 </head>
 <body>
     <div class="container my-5">
@@ -20,7 +23,7 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
             <a href= "anggota.php">Anggota</a> |
             <a href= "peminjaman.php">Peminjaman</a> |
         </div>
-        <table class="table table-bordered table-striped">
+        <table id= "MyTableAnggota" class="table">
             <thead>
                 <tr>
                     <th>No</th>
@@ -56,7 +59,7 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
                             <td><?= $email ?></td>
                             <td><?= $role ?></td>
                             <td>
-                            <a class="btn btn-danger"  href="deleteanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>" onclick="return confirm ('Hapus data ini?')">Delete</a>
+                            <a class="btn btn-danger"  href="anggota/deleteanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>" onclick="return confirm ('Hapus data ini?')">Delete</a>
                             <a class="btn btn-warning" href="anggota/editanggota.php?id_anggota=<?php echo $ambil_data_anggota['id_anggota']; ?>">Edit</a>
                             
                         </tr>
@@ -69,9 +72,11 @@ $query = mysqli_query($conn, "SELECT * FROM anggota");
             <a href= "anggota/tambahanggota.php">Tambah Anggota</a> 
         </div>
     </div>
-
-    <!-- Tambahkan skrip jQuery dan JavaScript Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.min.js"></script>
-</body>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js">
+                $(document).ready(function (){
+                    $ ('#myTableBuku').DataTable();
+                });
+    </script>
+   </body>
 </html>

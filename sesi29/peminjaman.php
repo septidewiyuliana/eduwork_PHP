@@ -7,53 +7,8 @@ $query = mysqli_query($conn, "SELECT * FROM peminjaman");
 <html>
 <head>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css">
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-        }
+      <link rel="stylesheet" type="text/css" href="css/style.css">
 
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #007BFF;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #80B4FF;
-        }
-
-        a {
-            text-decoration: none;
-            color: #007BFF;
-            margin-right: 5px;
-        }
-        .center-title {
-            background-color: #007BFF;
-            text-align: center;
-            padding: 20px 0;
-            text-decoration-color: aliceblue;
-        }
-        .white-text {
-            color: white;
-        }
-        .center-buttons {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div class="container my-5">

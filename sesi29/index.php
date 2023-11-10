@@ -53,7 +53,7 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
                             <td><?= $harga_pinjam ?></td>
                             <td><?= $stok ?></td>
                             <td>
-                              <a class="btn btn-danger"  href="delete.php?isbn=<?php echo $ambil_data['isbn']; ?>" onclick="return confirm ('Hapus data ini?')">Delete</a>
+                              <a class="btn btn-danger"  href="buku/delete.php?isbn=<?php echo $ambil_data['isbn']; ?>" onclick="return confirm ('Hapus data ini?')">Delete</a>
                                <a class="btn btn-warning" href="buku/edit.php?isbn=<?php echo $ambil_data['isbn']; ?>">Edit</a>
                             </td>
                         </tr>
@@ -63,7 +63,7 @@ $query = mysqli_query($conn, "SELECT * FROM buku");
             </tbody>
         </table>
         <div class="left-buttons">
-            <a href= "buku../tambahbuku.php">Tambah Buku</a> 
+            <a href= "buku/tambahbuku.php">Tambah Buku</a> 
         </div>
 
     </div>

@@ -1,5 +1,5 @@
 <?php
-include_once "../../data.php";
+include_once "../data.php";
 
 if (!isset($_POST['id_anggota'])) {
     die("Error: ISBN tidak ditemukan.");
@@ -20,7 +20,7 @@ if (!isset($_POST['id_anggota'])) {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    header("Location: ../../anggota.php");
+    header("Location: ../anggota.php");
 ?>
 
 
